@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.add.AddLogActivity"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/add_log_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:theme="@style/ThemeOverlay.MaterialComponents.Dark.ActionBar"
+        app:title="New Entry"
+        app:titleTextColor="@android:color/white"/>
+
+    <EditText
+        android:id="@+id/edit_text_log_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Title..."
+        android:padding="16dp"
+        android:textSize="18sp"
+        android:textStyle="bold"/>
+
+    <EditText
+        android:id="@+id/edit_text_log_description"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:hint="Write your Entry..."
+        android:layout_weight="1"
+        android:textAlignment="textStart"
+        android:gravity="top"
+        android:padding="16dp"
+        android:inputType="textMultiLine"
+        android:minLines="5"
+        android:scrollbars="vertical"/>
+
+</LinearLayout>

@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">MyDiary</string>
+    <string name="written_on">Written on %1$s</string>
+    <string name="updated_on">Updated on %1$s</string>
+    <string name="delete_message">Are you sure you want to delete \"%1$s\"?</string>
+    <string name="todo_collection_completion">%1$d / %2$d completed</string>
+    <string name="save_button_text">Save</string>
+    <string name="share_button_text">Share</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="my_logs">My Logs</string>
+    <string name="fab_description">Add new diary entry</string>
+    <string name="fab_add_todo">Add new todo</string>
+</resources>
