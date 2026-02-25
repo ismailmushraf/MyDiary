@@ -11,6 +11,7 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.appbar.MaterialToolbar;
 import com.ismailmushraf.mydiary.R;
 import com.ismailmushraf.mydiary.model.Todo;
 
@@ -19,8 +20,6 @@ import java.util.ArrayList;
 public class AddTodoCollectionActivity extends AppCompatActivity {
 
     private TodoAdapter adapter;
-
-    private TextView titleTextView;
     private RecyclerView todosView;
 
 
@@ -35,15 +34,20 @@ public class AddTodoCollectionActivity extends AppCompatActivity {
             return insets;
         });
 
-        titleTextView = findViewById(R.id.text_view_collection_title);
-        todosView = findViewById(R.id.recycler_view_todos);
-        todosView.setLayoutManager(new LinearLayoutManager(this));
-
         String title = getIntent().getStringExtra("title");
         ArrayList<Todo> todos =
                 getIntent().getParcelableArrayListExtra("todos");
 
-        titleTextView.setText(title);
+        MaterialToolbar toolbar = findViewById(R.id.add_todo_toolbar);
+        setSupportActionBar(toolbar);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setTitle(title);
+        }
+
+        todosView = findViewById(R.id.recycler_view_todos);
+        todosView.setLayoutManager(new LinearLayoutManager(this));
+
         adapter = new TodoAdapter(todos);
         todosView.setAdapter(adapter);
     }
